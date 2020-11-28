@@ -122,24 +122,63 @@
       <div class="container">
 
         {% for key,value in result.items() %}
+
             {% if key == "Baseline Angle" %}
-              <h1 class="traits" style="padding-top: 25px;">Handwriting Features</h1> 
+              <h1 class="traits" style="padding-top: 25px;">Handwriting Features &#x270D;</h1> 
             {% endif %}
 
             {% if key == "Emotional Stability" %}
-              <h1 class="traits">Personality Traits</h1>
+              <h1 class="traits">Personality Traits &#x1F60E;</h1>
             {% endif %}
 
             {% if key == "Social Isolation" %}
-                <div class="output" style="padding-bottom: 20px;">{{key}}:{{value}}</div>
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
 
-            {% else %}
-                <div class="output">{{key}}:{{value}}</div>
+            {% elif key == "Baseline Angle" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+            
+            {% elif key == "Top Margin" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+            
+            {% elif key == "Letter Size" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+            
+            {% elif key == "Line Spacing" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+            
+            {% elif key == "Word Spacing" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+
+            {% elif key == "Pen Pressure" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+            
+            {% elif key == "Slant" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}: {{value}}</div>
+            
+            {% elif key == "Emotional Stability" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
+
+            {% elif key == "Mental Energy or Will Power" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
+
+            {% elif key == "Modesty" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
+
+            {% elif key == "Personal Harmony and Flexibility" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
+
+            {% elif key == "Lack of Discipline" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
+
+            {% elif key == "Poor Concentration" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
+
+            {% elif key == "Non Communicativeness" %}
+              <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10060; {% else %} &#10004;&#65039; {% endif %}</div>
 
             {% endif %}
 
         {% endfor %}
-
       </div>
     </header>
 
