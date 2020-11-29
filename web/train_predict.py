@@ -205,9 +205,9 @@ def predict_all(file_name):
   result["Mental Energy or Will Power"] = clf2.predict([[letter_size, pen_pressure]])
   result["Modesty"] = clf3.predict([[letter_size, top_margin]])
   result["Personal Harmony and Flexibility"] = clf4.predict([[line_spacing, word_spacing]])
-  result["Lack of Discipline"] = clf5.predict([[slant_angle, top_margin]])
-  result["Poor Concentration"] = clf6.predict([[letter_size, line_spacing]])
-  result["Non Communicativeness"] = clf7.predict([[letter_size, word_spacing]])
+  result["Discipline"] = clf5.predict([[slant_angle, top_margin]])
+  result["Concentration"] = clf6.predict([[letter_size, line_spacing]])
+  result["Communicativeness"] = clf7.predict([[letter_size, word_spacing]])
   result["Social Isolation"] = clf8.predict([[line_spacing, word_spacing]])
 
   return result
