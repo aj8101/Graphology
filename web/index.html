@@ -56,8 +56,8 @@
     <link rel='stylesheet' href="{{ url_for('static', filename='css/bootstrap.css')}}">
     <link rel='stylesheet' href="{{ url_for('static', filename='css/fontawesome-all.css')}}">
     <link rel='stylesheet' href="{{ url_for('static', filename='css/swiper.css')}}">
-	<link rel='stylesheet' href="{{ url_for('static', filename='css/magnific-popup.css')}}">
-	<link rel='stylesheet' href="{{ url_for('static', filename='css/styles.css')}}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='css/magnific-popup.css')}}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='css/styles.css')}}">
 
 
     <!-- <link rel='stylesheet' href="static/css/bootstrap.css">
@@ -65,8 +65,8 @@
     <link rel='stylesheet' href="static/css/swiper.css">
     <link rel='stylesheet' href="static/css/magnific-popup.css">
     <link rel='stylesheet' href="static/css/styles.css"> -->
-	
-	<!-- Favicon  -->
+    
+    <!-- Favicon  -->
     <link rel="icon" href="{{ url_for('static', filename='images/logo.png')}}">
     <!-- <link rel="icon" href="static/images/logo.png"> -->
 
@@ -75,7 +75,7 @@
 <body>
     
     <!-- Preloader -->
-	<div class="spinner-wrapper">
+    <div class="spinner-wrapper">
         <div class="spinner">
             <div class="bounce1"></div>
             <div class="bounce2"></div>
@@ -103,17 +103,22 @@
                                 </form>
                                 <div>
                                     {% if error_msg != '' %}
-                                    <div class="alert">
-                                        <span class="closebtn">&times;</span>
-                                        {{ error_msg }}
-                                    </div> 
+					    <div class="alert">
+						<span class="closebtn">&times;</span>
+						{{ error_msg }}
+					    </div> 
                                     {% endif %}
-                                </div>
+                                </div>                              
                             </p>
                         </div>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
+	    
+            <div class="chosen_image">
+              <img src="{{image}}">
+            </div>
+	    
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
     <!-- end of header -->
@@ -172,7 +177,7 @@
 
             {% elif key == "Concentration" %}
               <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10004;&#65039; {% else %} &#10060; {% endif %}</div>
-	      
+          
             {% elif key == "Communicativeness" %}
               <div class="output" style="padding-bottom: 20px;">{{key}}:{% if value == "No" %} &#10004;&#65039; {% else %} &#10060; {% endif %}</div>
 
@@ -217,7 +222,7 @@
         </div> <!-- end of basic-1 -->
     </header>
     <!-- end of intro -->
-    	
+        
     <!-- Scripts -->
     <script>
         var close = document.getElementsByClassName("closebtn");
