@@ -103,11 +103,13 @@ img{
 	width: 40%;
 	color: #fff;
 	background-color: #3495eb;
+ 	overflow: hidden;
 }
 
 .form-control-file{
 	margin-left: 20px;
 	margin-right: 200px;
+  	width:91%
 }
 
 .p-large {
