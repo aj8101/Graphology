@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, request, url_for, redirect,jsonify
-from flask_ngrok import run_with_ngrok
+# from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 import os
 import numpy as np
