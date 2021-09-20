@@ -10,7 +10,7 @@ import train_predict
 app = Flask(__name__, template_folder='./')
 
 
-app.config['UPLOAD_FOLDER'] = 'static/uploads'
+app.config['UPLOAD_FOLDER'] = 'Templates/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 run_with_ngrok(app)
