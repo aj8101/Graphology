@@ -13,7 +13,7 @@ app = Flask(__name__, template_folder='./')
 app.config['UPLOAD_FOLDER'] = 'Templates/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-run_with_ngrok(app)
+# run_with_ngrok(app)
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -35,4 +35,4 @@ def main():
     return render_template('Templates/index.html',result={},error_msg=error_msg)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
