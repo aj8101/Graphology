@@ -10,7 +10,7 @@ import train_predict
 app = Flask(__name__, template_folder='./')
 
 
-app.config['UPLOAD_FOLDER'] = '/content/web/static/uploads'
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 run_with_ngrok(app)
@@ -28,11 +28,11 @@ def main():
         if uploaded_file.filename != '':
             image = uploaded_file.filename
             if not allowed_file(uploaded_file.filename):
-                return render_template('index.html', result={}, error_msg='Invalid extension')
+                return render_template('Templates/index.html', result={}, error_msg='Invalid extension')
             uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'],uploaded_file.filename))
             result = train_predict.predict_all(uploaded_file.filename)
-            return render_template('index.html', result=result, error_msg=error_msg, image= '/static/uploads/' + uploaded_file.filename)
-    return render_template('index.html',result={},error_msg=error_msg)
+            return render_template('Templates/index.html', result=result, error_msg=error_msg, image= '/static/uploads/' + uploaded_file.filename)
+    return render_template('Templates/index.html',result={},error_msg=error_msg)
 
 if __name__ == '__main__':
     app.run()
