@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, request, url_for, redirect,jsonify
-from flask_ngrok import run_with_ngrok
+# from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 import os
 import numpy as np
@@ -13,7 +13,7 @@ app = Flask(__name__, template_folder='./')
 app.config['UPLOAD_FOLDER'] = 'Templates/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-run_with_ngrok(app)
+# run_with_ngrok(app)
 
 def allowed_file(filename):
     return '.' in filename and \
