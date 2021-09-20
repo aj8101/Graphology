@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash, request, url_for, redirect,jsonify
-# from flask_ngrok import run_with_ngrok
+from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 import os
 import numpy as np
@@ -13,7 +13,7 @@ app = Flask(__name__, template_folder='./')
 app.config['UPLOAD_FOLDER'] = 'Templates/static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-# run_with_ngrok(app)
+run_with_ngrok(app)
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -31,8 +31,8 @@ def main():
                 return render_template('Templates/index.html', result={}, error_msg='Invalid extension')
             uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'],uploaded_file.filename))
             result = train_predict.predict_all(uploaded_file.filename)
-            return render_template('Templates/index.html', result=result, error_msg=error_msg, image= '/static/uploads/' + uploaded_file.filename)
+            return render_template('Templates/index.html', result=result, error_msg=error_msg, image= 'Templates/static/uploads/' + uploaded_file.filename)
     return render_template('Templates/index.html',result={},error_msg=error_msg)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
